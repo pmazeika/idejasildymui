@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: pmazeika/idejasildymui
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: "settings"
+    label: "Svetainės nustatymai"
+    files:
+      - name: "general"
+        label: "Bendra informacija"
+        file: "src/content/settings.json"
+        fields:
+          - { label: "Įmonės pavadinimas", name: "companyName", widget: "string" }
+          - { label: "Telefonas", name: "phone", widget: "string" }
+          - { label: "El. paštas", name: "email", widget: "string" }
+          - { label: "Adresas", name: "address", widget: "string" }

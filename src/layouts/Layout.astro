@@ -1,0 +1,58 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title = "Vandens šildytuvai, momentiniai šildytuvai ir boileriai | IdeaTherm",
+  description = "IdeaTherm — vandens šildytuvai, momentiniai vandens šildytuvai ir boileriai. Kokybė, greitas pristatymas ir profesionali montavimas visoje Lietuvoje.",
+  canonicalURL = "https://www.idejasildymui.lt",
+} = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "IdeaTherm",
+  "description": "Vandens šildytuvai, momentiniai vandens šildytuvai ir boileriai",
+  "url": "https://www.idejasildymui.lt",
+  "telephone": "+370-600-00000",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Vilnius",
+    "addressCountry": "LT"
+  },
+  "areaServed": "LT"
+};
+---
+
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="vandens šildytuvai, momentiniai vandens šildytuvai, boileriai, šildymo įranga, Lietuva" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="IdeaTherm" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- JSON-LD LocalBusiness Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
