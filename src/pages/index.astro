@@ -1,0 +1,202 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+---
+
+<Layout>
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">Idea<span>Therm</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Atidaryti meniu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul class="nav" id="nav-menu">
+          <li><a href="#produktai">Produktai</a></li>
+          <li><a href="#apie">Apie mus</a></li>
+          <li><a href="#kontaktai">Kontaktai</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__inner">
+      <h1>Vandens šildytuvai ir boileriai — greitas pristatymas visoje Lietuvoje</h1>
+      <p class="hero__sub">
+        Kokybiškas šildymo sprendimas jūsų namams ir verslui. Parduodame ir montuojame
+        momentiniai vandens šildytuvai, boilerius ir kitus šildymo prietaisus.
+      </p>
+      <a href="#kontaktai" class="btn">Susisiekite su mumis</a>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="section section--gray" id="produktai">
+    <div class="section__inner">
+      <h2 class="section__title">Mūsų produktai</h2>
+      <div class="section__divider"></div>
+      <div class="products-grid">
+        <article class="card">
+          <span class="card__icon" aria-hidden="true">🔥</span>
+          <h3 class="card__title">Vandens šildytuvai</h3>
+          <p class="card__text">
+            Platus asortimentas vandens šildytuvų — nuo kompaktiškų elektrinių iki
+            galingų dujinių modelių.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__icon" aria-hidden="true">⚡</span>
+          <h3 class="card__title">Momentiniai vandens šildytuvai</h3>
+          <p class="card__text">
+            Momentiniai vandens šildytuvai šildo vandenį akimirksniu — nereikia
+            laukti ir taupoma energija.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__icon" aria-hidden="true">💧</span>
+          <h3 class="card__title">Boileriai</h3>
+          <p class="card__text">
+            Boileriai su puikia šilumos izoliacija — idealus pasirinkimas namams
+            ir daugiabučiams.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="apie">
+    <div class="section__inner">
+      <h2 class="section__title">Apie mus</h2>
+      <div class="section__divider"></div>
+      <p class="about__text">
+        UAB „IdeaTherm" — patikimas šildymo sprendimų partneris Lietuvoje.
+        Bendradarbiaujame tiesiogiai su gamintojais, todėl galime pasiūlyti geriausias
+        kainas ir kokybišką aptarnavimą. Mūsų komanda padės išsirinkti tinkamiausią
+        vandens šildytuvą, boilerį ar momentinį šildytuvą.
+      </p>
+      <ul class="trust-list">
+        <li><span>✅</span><span>10+ metų patirtis</span></li>
+        <li><span>✅</span><span>Greitas pristatymas</span></li>
+        <li><span>✅</span><span>Profesionalus montavimas</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT FORM ===== -->
+  <section class="section section--gray" id="kontaktai">
+    <div class="section__inner">
+      <h2 class="section__title">Susisiekite su mumis</h2>
+      <div class="section__divider"></div>
+      <div class="form-wrap">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label>Neužpildykite šio lauko: <input name="bot-field" /></label>
+          </p>
+
+          <div class="form-group">
+            <label for="vardas">Vardas <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="vardas"
+              name="vardas"
+              placeholder="Jūsų vardas"
+              required
+              autocomplete="given-name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="elpastas">El. paštas <span aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="elpastas"
+              name="elpastas"
+              placeholder="jusu@elpastas.lt"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="telefonas">Telefono numeris</label>
+            <input
+              type="tel"
+              id="telefonas"
+              name="telefonas"
+              placeholder="+370 600 00000"
+              autocomplete="tel"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="zinute">Žinutė <span aria-hidden="true">*</span></label>
+            <textarea
+              id="zinute"
+              name="zinute"
+              placeholder="Jūsų žinutė..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--full">Siųsti žinutę</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="header__logo">Idea<span>Therm</span></span>
+        <p>
+          UAB „IdeaTherm"<br />
+          Šildymo sprendimų partneris Lietuvoje
+        </p>
+      </div>
+      <div class="footer__contact">
+        <p>
+          📍 Vilnius, Lietuva<br />
+          📞 <a href="tel:+37060000000">+370 600 00000</a><br />
+          ✉️ <a href="mailto:info@idejasildymui.lt">info@idejasildymui.lt</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 IdeaTherm. Visos teisės saugomos.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile nav toggle script -->
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-menu');
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Close menu when a nav link is clicked
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+</Layout>
