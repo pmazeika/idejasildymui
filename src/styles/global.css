@@ -442,3 +442,265 @@ a {
     padding: 1.75rem 1.25rem;
   }
 }
+
+/* =============================================
+   Clickable card (product card link)
+   ============================================= */
+.card--link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card--link:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.card__more {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* =============================================
+   Product page hero banner
+   ============================================= */
+.product-hero {
+  background: linear-gradient(135deg, var(--color-navy) 0%, #0e2144 60%, #142d5c 100%);
+  color: var(--color-white);
+  padding: 4rem 1.25rem 3.5rem;
+}
+
+.product-hero__inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.product-hero__back {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  transition: color var(--transition);
+}
+
+.product-hero__back:hover {
+  color: var(--color-white);
+}
+
+.product-hero__title {
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.product-hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+/* =============================================
+   Benefits grid (product pages)
+   ============================================= */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.benefit-card {
+  background: var(--color-white);
+  border: 1px solid #e8ecf2;
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.benefit-card__icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.benefit-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* =============================================
+   Pricing table (product pages)
+   ============================================= */
+.pricing-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 480px;
+}
+
+.pricing-table thead tr {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.pricing-table th {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.pricing-table td {
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid #e8ecf2;
+  vertical-align: middle;
+}
+
+.pricing-table tbody tr:nth-child(even) {
+  background: var(--color-gray);
+}
+
+.pricing-table tbody tr:hover {
+  background: #edf2fb;
+}
+
+.btn--sm {
+  padding: 0.45rem 1.1rem;
+  font-size: 0.875rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+/* =============================================
+   FAQ accordion (product pages)
+   ============================================= */
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  border: 1px solid #e8ecf2;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 1.1rem 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-navy);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  padding: 0 1.25rem 1.1rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* =============================================
+   CTA banner (product pages)
+   ============================================= */
+.cta-banner {
+  background: var(--color-accent);
+  padding: 3.5rem 1.25rem;
+  text-align: center;
+}
+
+.cta-banner__inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cta-banner__text {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.cta-banner .btn {
+  background: var(--color-white);
+  color: var(--color-accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cta-banner .btn:hover {
+  background: #f0f4ff;
+  transform: translateY(-2px);
+}
+
+/* =============================================
+   Stub page helpers
+   ============================================= */
+.cta-center {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+}
+
+.coming-soon {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+}
