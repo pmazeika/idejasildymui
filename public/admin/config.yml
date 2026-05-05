@@ -7,6 +7,16 @@ media_folder: public/images
 public_folder: /images
 
 collections:
+  - name: "produktai"
+    label: "Produktai"
+    folder: "src/content/produktai"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Pavadinimas", name: "title", widget: "string" }
+      - { label: "Antraštė", name: "subtitle", widget: "string" }
+      - { label: "Aprašymas", name: "description", widget: "text" }
+      - { label: "Nuotrauka", name: "image", widget: "image", required: false }
   - name: "settings"
     label: "Svetainės nustatymai"
     files:

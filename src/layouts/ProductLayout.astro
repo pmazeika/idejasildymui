@@ -1,0 +1,93 @@
+---
+import Layout from './Layout.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  jsonLdExtra?: Record<string, unknown>;
+}
+
+const { title, description, canonicalURL, heroTitle, heroSubtitle, jsonLdExtra } = Astro.props;
+---
+
+<Layout title={title} description={description} canonicalURL={canonicalURL} jsonLdExtra={jsonLdExtra}>
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">Idea<span>Therm</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Atidaryti meniu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul class="nav" id="nav-menu">
+          <li><a href="/#produktai">Produktai</a></li>
+          <li><a href="/#apie">Apie mus</a></li>
+          <li><a href="/#kontaktai">Kontaktai</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== PRODUCT HERO ===== -->
+  <section class="product-hero">
+    <div class="product-hero__inner">
+      <a href="/" class="product-hero__back">← Grįžti į pagrindinį</a>
+      <h1 class="product-hero__title">{heroTitle}</h1>
+      {heroSubtitle && <p class="product-hero__subtitle">{heroSubtitle}</p>}
+    </div>
+  </section>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="header__logo">Idea<span>Therm</span></span>
+        <p>
+          UAB „IdeaTherm"<br />
+          Šildymo sprendimų partneris Lietuvoje
+        </p>
+      </div>
+      <div class="footer__contact">
+        <p>
+          📍 Vilnius, Lietuva<br />
+          📞 <a href="tel:+37060000000">+370 600 00000</a><br />
+          ✉️ <a href="mailto:info@idejasildymui.lt">info@idejasildymui.lt</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 IdeaTherm. Visos teisės saugomos.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile nav toggle script -->
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-menu');
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+</Layout>
